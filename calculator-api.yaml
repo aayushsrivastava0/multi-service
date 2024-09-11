@@ -1,0 +1,121 @@
+openapi: 3.0.0
+info:
+  title: Calculator API
+  description: A simple API for addition, subtraction, multiplication, and division operations.
+  version: 1.0.0
+servers:
+  - url: http://localhost:5000
+paths:
+  /add:
+    get:
+      summary: Add two numbers
+      parameters:
+        - name: x
+          in: query
+          required: true
+          schema:
+            type: number
+          description: The first number.
+        - name: y
+          in: query
+          required: true
+          schema:
+            type: number
+          description: The second number.
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: number
+  /subtract:
+    get:
+      summary: Subtract two numbers
+      parameters:
+        - name: x
+          in: query
+          required: true
+          schema:
+            type: number
+          description: The first number.
+        - name: y
+          in: query
+          required: true
+          schema:
+            type: number
+          description: The second number.
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: number
+  /multiply:
+    get:
+      summary: Multiply two numbers
+      parameters:
+        - name: x
+          in: query
+          required: true
+          schema:
+            type: number
+          description: The first number.
+        - name: y
+          in: query
+          required: true
+          schema:
+            type: number
+          description: The second number.
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: number
+  /divide:
+    get:
+      summary: Divide two numbers
+      parameters:
+        - name: x
+          in: query
+          required: true
+          schema:
+            type: number
+          description: The first number.
+        - name: y
+          in: query
+          required: true
+          schema:
+            type: number
+          description: The second number.
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: number
+        '400':
+          description: Cannot divide by zero
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
